@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account_anglo_saxon_company" model="ir.ui.view">
+        <field name="name">account.anglo.saxon.company.config</field>
+        <field name="model">res.company</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Configuration" name="company_parameters">
+                    <group string="Account Anglo Saxon Process" colspan="5">
+                        <field name="stock_input_account" options="{'no_open':True,'no_create':True}"/>
+                        <field name="stock_output_account" options="{'no_open':True,'no_create':True}"/>
+                        <field name="price_variance_account" options="{'no_open':True,'no_create':True}"/>
+                        <field name="max_writeoff" options="{'no_open':True,'no_create':True}"/>
+                        <field name="write_off_journal" options="{'no_open':True,'no_create':True}"/>
+                        <field name="anglo_saxon_report_user" options="{'no_open':True,'no_create':True}"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

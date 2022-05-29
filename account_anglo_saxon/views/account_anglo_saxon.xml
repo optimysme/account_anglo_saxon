@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="account_reports_additional_menu"
+        name="Additional Reports"
+        parent="account.menu_finance"
+        sequence="25"
+        groups="account.group_account_invoice">
+
+        <menuitem
+                id="menu_anglo_saxon_control"
+                name="Goods in Transit Management"
+                groups="account.group_account_user"
+                sequence="95"/>
+    </menuitem>
+</odoo>

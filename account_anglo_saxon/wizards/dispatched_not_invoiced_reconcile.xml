@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="anglo_saxon_dispatched_not_invoiced_view">
+            <field name="name">Anglo-Saxon Dispatched Not Invoiced Reconciliation</field>
+            <field name="model">account.anglo.saxon.dni.reconcile</field>
+            <field name="arch" type="xml">
+                <form col="3" string="Dispatched Not Invoiced Reconciliation">
+                    <group colspan="4" col="2">
+                        <field name="account" options="{'no_create': True}"/>
+                        <field name="as_at_date"/>
+                        <field name="print_report"/>
+                    </group>
+                    <group colspan="4">
+                        <field name="report_name" invisible="1"/>
+                        <field name="data" filename="report_name" default_focus="1"/>
+                    </group>
+                    <footer colspan="4" col="4">
+                        <button name="process" string="Run Process" type="object" class="btn-primary"/>
+                        <button special="cancel" string="Close" class="btn-default"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_anglo_saxon_dispatched_not_invoiced_view" model="ir.actions.act_window">
+            <field name="name">Reconcile Dispatched Not Invoiced</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.anglo.saxon.dni.reconcile</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+f
+        <menuitem
+                id="menu_anglo_saxon_dni"
+                name="Reconcile Dispatched Not Invoiced"
+                action="action_anglo_saxon_dispatched_not_invoiced_view"
+                parent="account_anglo_saxon.menu_anglo_saxon_control"
+                groups="account.group_account_user"
+                sequence="95"/>
+
+    </data>
+</odoo>
